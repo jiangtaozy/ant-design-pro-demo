@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import 'ant-design-pro/dist/ant-design-pro.css'; 
+import { Route, Switch } from 'react-router'; // react-router v4
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from './index';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
     return (
-      <div>
-      </div>
+        <ConnectedRouter history={history}>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route render={() => (<div>Miss</div>)} />
+            </Switch>
+          </div>
+        </ConnectedRouter>
     );
   }
 }
