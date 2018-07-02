@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router'; // react-router v4
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from './index';
 import Home from './components/Home';
+import Toast from './components/Toast';
 
 class App extends Component {
   render() {
@@ -10,9 +11,9 @@ class App extends Component {
         <ConnectedRouter history={history}>
           <div>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route render={() => (<div>Miss</div>)} />
+              <Route path="/" component={Home} />
             </Switch>
+            <Toast />
           </div>
         </ConnectedRouter>
     );

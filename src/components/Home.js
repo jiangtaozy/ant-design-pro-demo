@@ -9,18 +9,23 @@ import { getMenuData } from '../common/menu';
 //import 'ant-design-pro/dist/ant-design-pro.css'; 
 import 'antd/dist/antd.css';
 import logo from '../assets/logo.svg';
+import Gallery from './Gallery';
 
 class Home extends Component {
   render() {
-    console.log('this.props: ', this.props);
+    //console.log('this.props: ', this.props);
     const { location } = this.props;
     return(
-      <div>
+      <div
+        style={{
+          display: 'flex',
+        }}>
         <SiderMenu
           logo={logo}
           menuData={getMenuData()}
           location={location}
         />
+        <Gallery />
       </div>
     );
   }
